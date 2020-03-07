@@ -19,7 +19,12 @@ def main():
         help="path to second config"
     )
 
-     parser.parse_args()
+    parser.add_argument(
+        "-f", "--format",
+        help="set format of output"
+    )
+
+    parser.parse_args()
 
 
 if __name__ == '__main__':
