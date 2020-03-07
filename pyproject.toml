@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "alekgit_gendiff"
-version = "0.1.0"
+version = "0.2.0"
 description = "A command-line program gendiff"
 authors = ["alekgit <shalek.edu@yandex.ru>"]
 repository = "https://github.com/alekgit/python-project-lvl2.git"
