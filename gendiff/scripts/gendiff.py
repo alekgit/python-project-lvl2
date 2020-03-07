@@ -2,29 +2,33 @@
 
 """gendiff script."""
 import argparse
+from gendiff.gendiff import generated_diff
 
 
 def main():
     """Run this script."""
     parser = argparse.ArgumentParser(
-        description="Generate diff"
+        description="Generate diff",
     )
 
     parser.add_argument(
         "first_file",
-        help="path to first config"
+        help="path to first config",
     )
     parser.add_argument(
         "second_file",
-        help="path to second config"
+        help="path to second config",
     )
 
     parser.add_argument(
         "-f", "--format",
-        help="set format of output"
+        help="set format of output",
+        choices=["plain", "json"],
+        default="plain",
     )
 
-    parser.parse_args()
+    args = vars(parser.parse_args())
+    print(generated_diff(**args))
 
 
 if __name__ == '__main__':
