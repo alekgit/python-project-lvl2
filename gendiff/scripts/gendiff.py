@@ -19,7 +19,7 @@ def main():
         help="path to second config"
     )
 
-    args = parser.parse_args()
+     parser.parse_args()
 
 
 if __name__ == '__main__':
