@@ -2,7 +2,7 @@
 
 """gendiff script."""
 import argparse
-from gendiff.gendiff import generated_diff
+from gendiff.gendiff import generate_diff
 
 
 def main():
@@ -28,7 +28,7 @@ def main():
     )
 
     args = vars(parser.parse_args())
-    print(generated_diff(**args))
+    print(generate_diff(**args))
 
 
 if __name__ == '__main__':

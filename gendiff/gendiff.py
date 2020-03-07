@@ -1,9 +1,9 @@
-import os
 import json
 
 
 def buildInnerStructure(obj1, obj2):
-    keys = set().union(obj1.keys(), obj2.keys())
+    keys = sorted((set().union(obj1.keys(), obj2.keys())))
+    print(keys)
 
     nodes = []
     for key in keys:
@@ -99,10 +99,11 @@ def render(inner_structure):
     return result
 
 
-def generated_diff(first_file, second_file, format):
+def generate_diff(first_file, second_file, format):
     obj1 = json.load(open(first_file))
     obj2 = json.load(open(second_file))
 
     inner_structure = buildInnerStructure(obj1, obj2)
+    print(inner_structure)
     rendered = render(inner_structure)
     return rendered
