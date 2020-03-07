@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "alekgit_gendiff"
+version = "0.1.0"
+description = "A command-line program gendiff"
+authors = ["alekgit <shalek.edu@yandex.ru>"]
+repository = "https://github.com/alekgit/python-project-lvl2.git"
+packages = [
+  { include = "gendiff" },
+]
+classifiers=[
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
