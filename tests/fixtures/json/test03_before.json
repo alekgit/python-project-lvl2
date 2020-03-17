@@ -1,0 +1,22 @@
+{
+  "common": {
+    "setting1": "Value 1",
+    "setting2": "200",
+    "setting3": true,
+    "setting6": {
+      "key": "value"
+    }
+  },
+  "group1": {
+    "baz": "bas",
+    "foo": "bar",
+    "group3": {
+      "fee": "777777"
+    }
+  },
+  "group2": {
+    "abc": "12345"
+  },
+  "group4": 4444,
+  "group6": 7777
+}

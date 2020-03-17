@@ -1,0 +1,18 @@
+---
+!!map {
+  ? !!str "country"
+  : !!str "Russia",
+  ? !!str "capital"
+  : !!str 'Moscow',
+  ? !!str "year"
+  : !!int 2017,
+  ? !!str "population"
+  : !!int 13000000,
+}
+# {country: 'Russia', capital: 'Moscow', year: 2017, population: 13000000}
+# {
+#   "country": "Russia",
+#   "capital": "Moscow",
+#   "year": 2017,
+#   "population": 13000000
+# }

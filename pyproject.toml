@@ -14,10 +14,11 @@ classifiers=[
 ]
 
 [tool.poetry.scripts]
-gendiff = "gendiff.scripts.gendiff:main"
+gendiff = "gendiff.scripts.cli:main"
 
 [tool.poetry.dependencies]
 python = "^3.8"
+PyYAML = "^5.3"
 
 [tool.poetry.dev-dependencies]
 flake8 = "^3.7.9"

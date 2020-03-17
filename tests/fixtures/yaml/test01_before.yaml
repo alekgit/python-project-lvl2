@@ -1,0 +1,15 @@
+---
+!!map {
+  ? !!str "host"
+  : !!str "hexlet.io",
+  ? !!str "timeout"
+  : !!int "50",
+  ? !!str "proxy"
+  : !!str "123.234.53.22",
+}
+# {host: 'hexlet.io', timeout: 50, proxy: '123.234.53.22'}
+# {
+# "host": "hexlet.io",
+# "timeout": 50,
+# "proxy": "123.234.53.22"
+# }

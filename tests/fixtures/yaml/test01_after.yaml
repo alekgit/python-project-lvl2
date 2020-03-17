@@ -1,0 +1,15 @@
+---
+!!map {
+  ? !!str "timeout"
+  : !!int "20",
+  ? !!str "verbose"
+  : !!bool "true",
+  ? !!str "host"
+  : !!str "hexlet.io",
+}
+# {timeout: 20, verbose: true, host: 'hexlet.io'}
+# {
+#   "timeout": 20,
+#   "verbose": true,
+#   "host": "hexlet.io"
+# }

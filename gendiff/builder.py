@@ -1,42 +1,32 @@
-def buildInnerStructure(obj1, obj2):
+import pprint
+
+
+def build_node(node_type, key, old_value=None, new_value=None, children=None):
+    return {
+        'type': node_type,
+        'key': key,
+        'old_value': old_value,
+        'new_value': new_value,
+        'children': children,
+    }
+
+
+def build_diff(obj1, obj2):
     keys = sorted((set().union(obj1.keys(), obj2.keys())))
 
-    nodes = []
-    for key in keys:
-        if key in obj1 and key in obj2:
+    def fn(key):
+        if key not in obj1:
+            return build_node('added', key, new_value = obj2[key])
+        if key not in obj2:
+            return build_node('removed', key, old_value = obj1[key])
+        if type(obj2[key]) is dict and type(obj1[key]) is dict:
             old_value = obj1[key]
             new_value = obj2[key]
-            if old_value == new_value:
-                node = {
-                    "type": "unchanged",
-                    "key": key,
-                    "old_value": old_value,
-                    "new_value": new_value,
-                }
-            else:
-                node = {
-                    "type": "changed",
-                    "key": key,
-                    "old_value": old_value,
-                    "new_value": new_value,
-                }
-        else:
-            if key in obj1:
-                old_value = obj1[key]
-                node = {
-                    "type": "removed",
-                    "key": key,
-                    "old_value": old_value,
-                    "new_value": None,
-                }
-            else:
-                new_value = obj2[key]
-                node = {
-                    "type": "added",
-                    "key": key,
-                    "old_value": None,
-                    "new_value": new_value,
-                }
-        nodes.append(node)
+            children = build_diff(old_value, new_value)
+            return build_node('nested', key, old_value, new_value, children)
+        if obj1[key] == obj2[key]:
+            return build_node('unchanged', key, obj1[key], obj2[key])
+        return build_node('changed', key, obj1[key], obj2[key])
 
-    return nodes
+    nodes = map(fn, keys)
+    return list(nodes)

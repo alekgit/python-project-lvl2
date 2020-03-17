@@ -1,0 +1,15 @@
+---
+!!map {
+  ? !!str "country"
+  : !!str "Russia",
+  ? !!str "capital"
+  : !!str "Saint Petersburg",
+  ? !!str "year"
+  : !!int 1800,
+}
+# {country: 'Russia', capital: 'Saint Petersburg', year: 1800}
+# {
+#   "country": "Russia",
+#   "capital": "Saint Petersburg",
+#   "year": 1800
+# }
