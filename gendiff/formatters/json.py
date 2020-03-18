@@ -75,7 +75,7 @@ node_to_string = {
 }
 
 
-def render(structure):
+def formatter(structure):
     def inner(substructure, depth):
         output = map(
             lambda node: node_to_string[node['type']](node, depth, inner),

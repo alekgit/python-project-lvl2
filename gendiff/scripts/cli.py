@@ -8,23 +8,23 @@ from gendiff.gendiff import generate_diff
 def main():
     """Run this script."""
     parser = argparse.ArgumentParser(
-        description="Generate diff",
+        description='Generate diff',
     )
 
     parser.add_argument(
-        "first_file",
-        help="path to first config",
+        'path_to_first_file',
+        help='path to first config',
     )
     parser.add_argument(
-        "second_file",
-        help="path to second config",
+        'path_to_second_file',
+        help='path to second config',
     )
 
     parser.add_argument(
-        "-f", "--format",
-        help="set format of output",
-        choices=["plain", "json"],
-        default="plain",
+        '-f', '--format',
+        help='set format of output',
+        choices=['plain', 'json'],
+        default='json',
     )
 
     args = vars(parser.parse_args())
